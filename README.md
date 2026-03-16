@@ -60,4 +60,4 @@ $ make fmt
 $ make mocks
 ```
 
-- can be configured in `.mockery.yaml`
+- can be configured in `.mockery.yml`
