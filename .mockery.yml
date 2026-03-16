@@ -1,0 +1,12 @@
+# https://vektra.github.io/mockery/latest/configuration/
+dir: mocks/{{.SrcPackageName}}
+filename: mocks.go
+recursive: true
+template: testify
+packages:
+  net/http:
+    interfaces:
+      ResponseWriter:
+  github.com/gkatanacio/go-lambdalith-template/internal/sample:
+    config:
+      all: true

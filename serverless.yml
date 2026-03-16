@@ -1,0 +1,28 @@
+service: go-lambdalith-template
+
+frameworkVersion: "3"
+
+package:
+  individually: true
+
+provider:
+  name: aws
+  runtime: provided.al2023
+  architecture: arm64
+  deploymentMethod: direct
+  deploymentBucket:
+    name: ${env:AWS_DEPLOYMENT_BUCKET}
+  stage: ${env:STAGE}
+  region: ${env:AWS_REGION}
+
+functions:
+  api:
+    package:
+      artifact: bin/api.zip
+    handler: bootstrap
+    url:
+      cors: true
+    timeout: 20
+    memorySize: 1024
+    environment:
+      HELLO_WHO: ${env:HELLO_WHO}

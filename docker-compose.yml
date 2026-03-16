@@ -1,0 +1,27 @@
+services:
+  go-custom:
+    build:
+      context: .
+      dockerfile: Dockerfile.golang
+    image: go-custom
+    volumes:
+      - .:/code:cached
+    working_dir: /code
+    env_file: .env
+    environment:
+      - GOPATH=/code/.go
+
+  serverless:
+    image: gkatanacio/oss-serverless:3.62.1
+    volumes:
+      - .:/app:cached
+    working_dir: /app
+    env_file: .env
+
+  mockery:
+    image: vektra/mockery:3.7
+    volumes:
+      - .:/code:cached
+    working_dir: /code
+    environment:
+      - XDG_CACHE_HOME=/code/.cache
