@@ -15,6 +15,10 @@ deps: .env
 test: .env
 	docker compose run --rm go-custom go test -v ./...
 
+.PHONY: server
+server: .env
+	docker compose run --rm -e APP_ENV=local -p 8080:8080 go-custom go run ./functions/api/main.go
+
 .PHONY: build
 build: .env
 	docker compose run --rm go-custom make _build

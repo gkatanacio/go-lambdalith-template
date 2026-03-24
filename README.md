@@ -32,6 +32,12 @@ $ make deps
 $ make test
 ```
 
+#### run as local API server
+
+```bash
+$ make server
+```
+
 #### build serverless functions
 
 ```bash

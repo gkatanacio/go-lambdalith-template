@@ -12,7 +12,7 @@ provider:
   deploymentMethod: direct
   deploymentBucket:
     name: ${env:AWS_DEPLOYMENT_BUCKET}
-  stage: ${env:STAGE}
+  stage: ${env:APP_ENV}
   region: ${env:AWS_REGION}
 
 functions:
