@@ -1,6 +1,6 @@
 module github.com/gkatanacio/go-lambdalith-template
 
-go 1.26
+go 1.27
 
 require (
 	github.com/akrylysov/algnhsa v1.1.0

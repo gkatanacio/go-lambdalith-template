@@ -12,7 +12,7 @@ services:
       - GOPATH=/code/.go
 
   serverless:
-    image: gkatanacio/oss-serverless:3.62.1
+    image: gkatanacio/oss-serverless:4.2.0
     volumes:
       - .:/app:cached
     working_dir: /app
